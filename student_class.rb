@@ -12,5 +12,17 @@ class Student
     return @cohort
   end
 
+  def set_name(name)
+    @name = name
+  end
+
+  def set_cohort(new_cohort)
+    @cohort = new_cohort
+  end
+
+  def student_talk(string_to_say)
+    speech = "#{@name} says: '#{string_to_say}'"
+    return speech
+  end
 
 end
