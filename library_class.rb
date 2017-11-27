@@ -50,7 +50,7 @@ class Library
 
   def add_book(title)
     new_book = {
-      title: title,
+      title: title.downcase,
       rental_details: {
         student_name: "",
         date: ""
@@ -59,5 +59,15 @@ class Library
     @books.push(new_book)
   end
 
-  
+
+  def rent_book(title, student, date)
+    for book in @books
+      if book[:title] == title.downcase
+        book[:rental_details][:student_name] = student
+        book[:rental_details][:date] = date
+      end
+    end
+  end
+
+
 end

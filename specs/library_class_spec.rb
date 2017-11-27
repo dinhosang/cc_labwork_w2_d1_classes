@@ -91,6 +91,38 @@ class TestLibrary < MiniTest::Test
 
 
   # Create a method that changes the rental details of a book by taking in the title of the book, the student renting it and the date it's due to be returned.
+  def test_rent_book__found
+    book_title = "Viriconium"
+    student_renting = "Maria"
+    date_of_return = "14/01/18"
+
+    @the_library.add_book(book_title)
+    @the_library.rent_book(book_title, student_renting, date_of_return)
+
+    actual = @the_library.book_look_up(book_title)
+    expected = {
+    title: "viriconium",
+    rental_details: {
+     student_name: "Maria",
+     date: "14/01/18"
+                    }
+              }
+
+    assert_equal(expected, actual)
+  end
+
+  def test_rent_book__not_found
+    book_title = "Selectium"
+    student_renting = "Maria"
+    date_of_return = "14/01/18"
+
+    @the_library.rent_book(book_title, student_renting, date_of_return)
+
+    actual = @the_library.book_look_up(book_title)
+    expected = false
+
+    assert_equal(expected, actual)
+  end
 
 
 end
