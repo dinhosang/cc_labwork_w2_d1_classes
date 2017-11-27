@@ -9,4 +9,16 @@ class SportsTeam
   end
 
 
+  def new_player(name)
+    @players.push(name)
+  end
+
+
+  def check_player(name)
+    for player in players
+      return true if player == name.downcase
+    end
+    return false
+  end
+
 end
