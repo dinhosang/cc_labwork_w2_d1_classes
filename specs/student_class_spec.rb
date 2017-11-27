@@ -10,7 +10,6 @@ class TestStudent < MiniTest::Test
 
 def setup
   @student = Student.new('John',18)
-
 end
 
 def test_get_name
@@ -38,11 +37,15 @@ def test_student_talk
   assert_equal("John says: 'Hi there'", @student.student_talk(string_to_say))
 end
 
-def test_say_favourite_language()
+def test_say_favourite_language
   favourite_language1 = 'Ruby'
   favourite_language2 = 'Python'
-  assert_equal('I love Ruby', @student.say_favourite_language(favourite_language1))
-  assert_equal('I love Python', @student.say_favourite_language(favourite_language2))
+
+  actual_ruby = @student.say_favourite_language(favourite_language1)
+  actual_python = @student.say_favourite_language(favourite_language2)
+
+  assert_equal('I love Ruby', actual_ruby)
+  assert_equal('I love Python', actual_python)
 end
 
 end
