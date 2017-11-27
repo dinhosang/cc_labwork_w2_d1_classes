@@ -38,4 +38,11 @@ def test_student_talk
   assert_equal("John says: 'Hi there'", @student.student_talk(string_to_say))
 end
 
+def test_say_favourite_language()
+  favourite_language1 = 'Ruby'
+  favourite_language2 = 'Python'
+  assert_equal('I love Ruby', @student.say_favourite_language(favourite_language1))
+  assert_equal('I love Python', @student.say_favourite_language(favourite_language2))
+end
+
 end

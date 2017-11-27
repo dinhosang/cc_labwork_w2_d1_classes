@@ -25,4 +25,9 @@ class Student
     return speech
   end
 
+  def say_favourite_language(favourite_language)
+    stuff_to_say = "I love #{favourite_language}"
+    return stuff_to_say
+  end
+
 end
