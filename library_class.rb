@@ -38,4 +38,13 @@ class Library
   end
 
 
+  def rental_details(title)
+    book_details = book_look_up(title)
+    if book_details
+      rental_info = book_details[:rental_details]
+      return rental_info
+    end
+    return false
+  end
+
 end

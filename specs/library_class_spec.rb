@@ -53,15 +53,30 @@ class TestLibrary < MiniTest::Test
 
   def test_book_look_up__not_found
     book_title = "chicago_blues"
-    result = false
+    expected = false
     assert_equal(false, @the_library.book_look_up(book_title))
   end
 
+
+  # Create a method that takes in a book title and returns only the rental details for that book.
+  def test_rental_details__found
+    book_title = "puzzler's_dilemma"
+    expected = {
+     student_name: "Roarke",
+     date: "13/01/18" }
+    assert_equal(expected, @the_library.rental_details(book_title))
+  end
+
+  def test_rental_details__not_found
+    book_title = "rykhart's_dilemma"
+    expected = false
+    assert_equal(expected, @the_library.rental_details(book_title))
+  end
 
 end
 
 
 
-# Create a method that takes in a book title and returns only the rental details for that book.
+
 # Create a method that takes in a book title and adds it to our book list (Add a new hash for the book with the student name and date being left as empty strings)
 # Create a method that changes the rental details of a book by taking in the title of the book, the student renting it and the date it's due to be returned.
