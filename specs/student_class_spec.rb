@@ -12,13 +12,16 @@ def setup
   @student = Student.new('John',18)
 end
 
+
 def test_get_name
   assert_equal('John', @student.get_name())
 end
 
+
 def test_get_cohort
   assert_equal(18, @student.get_cohort())
 end
+
 
 def test_set_name
   new_name = 'Fred'
@@ -26,16 +29,19 @@ def test_set_name
   assert_equal('Fred', @student.get_name())
 end
 
+
 def test_set_cohort
   new_cohort = 19
   @student.set_cohort(new_cohort)
   assert_equal(19, @student.get_cohort())
 end
 
+
 def test_student_talk
   string_to_say = "Hi there"
   assert_equal("John says: 'Hi there'", @student.student_talk(string_to_say))
 end
+
 
 def test_say_favourite_language
   favourite_language1 = 'Ruby'
@@ -47,5 +53,6 @@ def test_say_favourite_language
   assert_equal('I love Ruby', actual_ruby)
   assert_equal('I love Python', actual_python)
 end
+
 
 end
