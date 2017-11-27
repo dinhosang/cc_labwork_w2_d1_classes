@@ -54,6 +54,11 @@ class TestSportsTeam < MiniTest::Test
   end
 
 
+  def test_check_points
+    assert_equal(0, @the_team.points)
+  end
+
+  
 end
 
 
