@@ -73,10 +73,24 @@ class TestLibrary < MiniTest::Test
     assert_equal(expected, @the_library.rental_details(book_title))
   end
 
+
+  # Create a method that takes in a book title and adds it to our book list (Add a new hash for the book with the student name and date being left as empty strings)
+  def test_add_book
+    book_title = "viriconium"
+    @the_library.add_book("viriconium")
+    expected = {
+    title: "viriconium",
+    rental_details: {
+     student_name: "",
+     date: ""
+                    }
+              }
+    actual = @the_library.book_look_up("viriconium")
+    assert_equal(expected, actual)
+  end
+
+
+  # Create a method that changes the rental details of a book by taking in the title of the book, the student renting it and the date it's due to be returned.
+
+
 end
-
-
-
-
-# Create a method that takes in a book title and adds it to our book list (Add a new hash for the book with the student name and date being left as empty strings)
-# Create a method that changes the rental details of a book by taking in the title of the book, the student renting it and the date it's due to be returned.

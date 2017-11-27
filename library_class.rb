@@ -47,4 +47,17 @@ class Library
     return false
   end
 
+
+  def add_book(title)
+    new_book = {
+      title: title,
+      rental_details: {
+        student_name: "",
+        date: ""
+      }
+    }
+    @books.push(new_book)
+  end
+
+  
 end
