@@ -8,6 +8,7 @@ class Library
     # *books in the parameter means all the entered args
     # are placed into the class in an array
     # this array is then entered straight into @books
+    # the * is the splat operator
     @books = books
 
   end
